@@ -34,10 +34,8 @@ def update_grid(grid, rule_strategy):
 
 def main(rule_name):
     grid = np.zeros(GRID_SIZE, dtype=int)
-    if rule_name not in rule_mapping:
-        raise ValueError(f"Invalid rule name: {rule_name}")
 
-    rule_factory = rule_mapping[rule_name]
+    rule_factory = rule_mapping.get(rule_name, 'standard')
 
     rule = rule_factory()
     rule_strategy = rule.create_rule()
