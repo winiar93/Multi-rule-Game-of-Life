@@ -1,4 +1,6 @@
-# Multi-rule-Game-of-Life
+
+![alt text](title.png)
+
 Example implementation of strategy and factory design patterns in Game of Life.
 
 ## Rules
