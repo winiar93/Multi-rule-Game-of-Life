@@ -33,3 +33,25 @@ class StandardRule(GameOfLifeRule):
             if alive_cells == 3:
                 return 1
         return 0
+
+
+class RuleFactory(ABC):
+    @abstractmethod
+    def create_rule(self):
+        pass
+
+
+class StandardRuleFactory(RuleFactory):
+    def create_rule(self):
+        return StandardRule()
+
+
+class DayAndNightRuleFactory(RuleFactory):
+    def create_rule(self):
+        return DayAndNightRule()
+
+
+rule_mapping = {
+    'standard': StandardRuleFactory,
+    'dayandnight': DayAndNightRuleFactory,
+}
