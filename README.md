@@ -45,6 +45,7 @@ Available game `rules`:
 
 ## Available interactions
 
-- Mouse Click: Place new cell or remove single cell.
+- Left Mouse Click: Place new cell.
+- Right Mouse Click: Remove cell.
 - Space: Pause/Resume the simulation.
 - Enter: Generate a random grid.

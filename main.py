@@ -52,10 +52,18 @@ def main(rule_name):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                pos = pygame.mouse.get_pos()
-                x, y = pos[0] // CELL_SIZE, pos[1] // CELL_SIZE
-                new_grid[y, x] = 1 - grid[y, x]
+
+            elif event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.MOUSEMOTION:
+                if pygame.mouse.get_pressed()[0]:
+                    pos = pygame.mouse.get_pos()
+                    x, y = pos[0] // CELL_SIZE, pos[1] // CELL_SIZE
+                    new_grid[y, x] = 1
+
+                elif pygame.mouse.get_pressed()[2]:
+                    pos = pygame.mouse.get_pos()
+                    x, y = pos[0] // CELL_SIZE, pos[1] // CELL_SIZE
+                    new_grid[y, x] = 0
+
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     toggle = not toggle
