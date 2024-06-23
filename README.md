@@ -36,7 +36,7 @@ pip install -r requirements.txt
 Run the script with the desired rule set as a command-line argument. If no argument is provided, the standard rule is used by default.
 
 ```bash
-python game_of_life.py [rule]
+python main.py [rule]
 ```
 
 Available game `rules`:
